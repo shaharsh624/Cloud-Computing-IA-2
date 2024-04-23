@@ -6,7 +6,7 @@ This guide will walk you through creating a three-tier application using a multi
 
 You can also refer to the medium article: [Dockerise Flask App with MongoDB](https://harshshahdev.medium.com/dockerise-flask-app-with-mongodb-09427f4af8da)
 
-### What is a Three-Tier Architecture?
+## What is a Three-Tier Architecture?
 
 A three-tier architecture is a well-established software application design pattern that organizes the application into three logical and physical tiers:
 
@@ -16,7 +16,7 @@ A three-tier architecture is a well-established software application design patt
 
 ![Three Tier Architecture](https://miro.medium.com/v2/resize:fit:720/format:webp/0*G-7HIcMgLH89QXvh.png)
 
-### Creating an Isolated Network
+## Creating an Isolated Network
 
 This command creates a new Docker network named `myflaskmongonet` that will be used by our application containers.
 
@@ -26,7 +26,7 @@ docker network create myflaskmongonet
 
 ![All Docker Networks](https://miro.medium.com/v2/resize:fit:828/format:webp/1*LVkJ06WwsDTl3cQcAHe3Rg.png)
 
-### Creating a MongoDB Container
+## Creating a MongoDB Container
 
 You can pull the official MongoDB image from Docker Hub: https://hub.docker.com/_/mongo
 
@@ -36,7 +36,7 @@ docker pull mongo:latest
 
 ![Docker pull output](https://miro.medium.com/v2/resize:fit:828/format:webp/1*dlByTOVsOSfeV3k4zpAcOA.png)
 
-### Running Mongo Container
+## Running Mongo Container
 
 This command runs a MongoDB container in detached mode (`-d`), maps the container's port 27017 to the host's port 27017 (`-p`), connects the container to the `myflaskmongonet` network (`--network`), and assigns the name `21bcp359_mongo` to the container.
 
@@ -50,7 +50,7 @@ docker run -d -p 27017:27017 --network myflaskmongonet --name 21bcp359_mongo mon
 
 ![MongoDB Compass](https://miro.medium.com/v2/resize:fit:828/format:webp/1*T4oyUAmSy_JgM_g3_GfJvg.png)
 
-### Project Setup
+## Project Setup
 
 For this example, we'll use a project from GitHub: https://github.com/Soumi7/Mongo-Docker
 
@@ -74,7 +74,7 @@ python app.py
 
 Navigate to http://localhost:5000/
 
-### Create Dockerfile in the root of your project
+## Create Dockerfile in the root of your project
 
 ```
 FROM python:3.8
@@ -93,7 +93,7 @@ ENTRYPOINT ["python", "app_atlas.py"]
 
 RUN is used to execute commands during the build process of a Docker image, while CMD is used to specify the default command to run when a Docker container is started from the image.
 
-### Build Docker image using the following command
+## Build Docker image using the following command
 
 This command builds the image from the Dockerfile in the current directory and tags it with the name `21bcp359_flask_mongo`.
 
@@ -103,7 +103,7 @@ docker build --tag 21bcp359_flask_mongo .
 
 ![Building Image from Dockerfile](https://miro.medium.com/v2/resize:fit:828/format:webp/1*W2Glnv4ghUjIqXxcO-mmCQ.png)
 
-### Run the Flask App Container
+## Run the Flask App Container
 
 This command runs a container from the `21bcp359_flask_mongo` image:
 
@@ -136,7 +136,7 @@ docker run -dit -p 5000:5000 --name=21bcp359_flaskapp 21bcp359_flask_mongo
 ![Web App: Edited Details](https://miro.medium.com/v2/resize:fit:828/format:webp/1*frAmhTvLuWaNoTMldgjsuQ.png)
 ![MongoDB Compass](https://miro.medium.com/v2/resize:fit:828/format:webp/1*pJBq_h38P3gXt3nUqRvipA.png)
 
-### Push to Dockerhub
+## Push to Dockerhub
 
 ```
 docker tag 21bcp359_flask_mongo shaharsh624/21bcp359_flaskapp
@@ -150,9 +150,9 @@ docker push shaharsh624/21bcp359_flaskapp
 
 ![Pushed Dockerhub image](https://miro.medium.com/v2/resize:fit:828/format:webp/1*paj_mEaUxBbOh0NjhVC6Jg.png)
 
-Dockerhub Link: https://hub.docker.com/r/shaharsh624/21bcp359_flaskapp
+**Dockerhub Link:** https://hub.docker.com/r/shaharsh624/21bcp359_flaskapp
 
-GitHub Project Link: https://github.com/shaharsh624/Cloud-Computing-IA-2
+**GitHub Project Link:** https://github.com/shaharsh624/Cloud-Computing-IA-2
 
 ---
 

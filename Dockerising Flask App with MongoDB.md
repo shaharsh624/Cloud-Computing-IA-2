@@ -149,10 +149,18 @@ docker push shaharsh624/21bcp359_flaskapp
 
 <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*paj_mEaUxBbOh0NjhVC6Jg.png" alt="Pushed Dockerhub image" width="500" height="auto">
 
-**Dockerhub Link:** https://hub.docker.com/r/shaharsh624/21bcp359_flaskapp
+<br>
 
-**GitHub Project Link:** https://github.com/shaharsh624/Cloud-Computing-IA-2
+[Dockerhub Link](https://hub.docker.com/r/shaharsh624/21bcp359_flaskapp)
+
+[GitHub Project Link](https://github.com/shaharsh624/Cloud-Computing-IA-2)
 
 ---
 
-**Topics:** _Docker_, _Flask_, _Mongodb_, _Multi Container Setup_
+**Connect with me:**
+
+**Portfolio:** [shaharsh.vercel.app](https://shaharsh.vercel.app/)  
+**LinkedIn:** [harshshahdev](https://www.linkedin.com/in/harshshahdev/)  
+**GitHub:** [shaharsh624](https://github.com/shaharsh624)
+
+---
